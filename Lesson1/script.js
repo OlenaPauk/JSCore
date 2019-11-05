@@ -1,6 +1,6 @@
 // 2
-let MyLastName = "Pauk";
-console.log(MyLastName);
+let myLastName = "Pauk";
+console.log(myLastName);
 // 
 
 // 3
