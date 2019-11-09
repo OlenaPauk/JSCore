@@ -52,26 +52,34 @@ else {
 // 
 
 // 4
-let triangleA = +prompt('Please enter the length of the first side of the triangle.', '3');
-let triangleB = +prompt('Please enter the length of the second side of the triangle.', '4');
-let triangleC = +prompt('Please enter the length of the third side of the triangle.', '5');
-if (triangleA >= 0 && triangleB >= 0 && triangleC >= 0) {
+let triangleA = +prompt('Please enter the length of the first side of the triangle.', '3').replace(/\s+/g, '');
+let triangleB = +prompt('Please enter the length of the second side of the triangle.', '4').replace(/\s+/g, '');
+let triangleC = +prompt('Please enter the length of the third side of the triangle.', '5').replace(/\s+/g, '');
+
+if (triangleA == ' ' || triangleB == ' ' || triangleC == ' ') {
+    console.log('You have not entered a number, please, try again');
+}
+else if (triangleA > 0 && triangleB > 0 && triangleC > 0) {
     let semiperimeter = ((triangleA + triangleB + triangleC) / 2);
     let areaTriangle = (semiperimeter * (semiperimeter - triangleA) * (semiperimeter - triangleB) * (semiperimeter - triangleC)) ** (1 / 2);
-    console.log(`The area of ​​the triangle is equal ${Math.round(areaTriangle * 1000) / 1000}`);
-    if (Math.hypot(triangleA, triangleB) == Math.hypot(triangleC)
-        || Math.hypot(triangleB, triangleC) == Math.hypot(triangleA)
-        || Math.hypot(triangleA, triangleC) == Math.hypot(triangleB)) {
-        console.log('The triangle is rectangular');
-    }
-    else {
-        console.log('The triangle is not rectangular');
+    if (isNaN(areaTriangle)) {
+        console.log('There is no such triangle!');
+    } else {
+        console.log(`The area of ​​the triangle is equal ${Math.round(areaTriangle * 1000) / 1000}`);
+        if (Math.hypot(triangleA, triangleB) == Math.hypot(triangleC)
+            || Math.hypot(triangleB, triangleC) == Math.hypot(triangleA)
+            || Math.hypot(triangleA, triangleC) == Math.hypot(triangleB)) {
+            console.log('The triangle is rectangular');
+        }
+        else {
+            console.log('The triangle is not rectangular');
+        }
     }
 }
 else {
     console.log('Incorrect data');
 }
-// 
+
 
 // 5
 let data = new Date().getHours();
