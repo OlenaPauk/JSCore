@@ -23,11 +23,12 @@ countries.addEventListener('change', function () {
         cityUrk.style.display = 'block';
         cityGer.style.display = 'none';
     }
-    selVal.innerHTML += `${valueCountry} ,`;
+    // selVal.innerHTML += `${valueCountry} ,`;
 
 });
 cities.addEventListener('change', function () {
+    let valueCountry = countries.value;
     let valueCity = city.value;
-    selVal.innerHTML += `${valueCity} <br>`;
+    selVal.innerHTML += `${valueCountry}, ${valueCity} <br>`;
 });
 
