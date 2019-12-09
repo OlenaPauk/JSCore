@@ -9,6 +9,6 @@ http.createServer(function (request, response) {
     ${os.platform()}<br> System work time:
     ${os.uptime() / 60} minutes <br> Current work directory:
      ${path.dirname(__filename)}<br> Server file name ${path.basename(__filename)}`);
-}).listen(8000);
-console.log('Server running at http://127.0.0.1:8000/');
+}).listen(5000);
+console.log('Server running at http://127.0.0.1:5000/');
 
